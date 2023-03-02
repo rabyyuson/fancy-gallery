@@ -10,34 +10,19 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <title>Fancy Gallery</title>
+    <link href="%PUBLIC_URL%/lib/styles.css" type="text/css" rel="stylesheet" />
+    <script src="%PUBLIC_URL%/lib/js/jquery-1.10.2.min.js"></script>
+    <script src="%PUBLIC_URL%/lib/js/jquery-ui-1.8.21.min.js"></script>
+    <script src="%PUBLIC_URL%/lib/js/fancyGallery.js"></script>
+    <script src="%PUBLIC_URL%/lib/js/utilities.js"></script>
+    <script type="text/javascript">
+      $(function(){$('.gallery').fancyGallery({'effect':'slide'});$('.gallery .gallery-icon img').each(function(){imgResizer(60,$(this))});$('.gallery .gallery-icon img').eq(0).fadeIn(100,function(){nextItem($(this).parents('dl,dt').next().find('img'))});function nextItem(item){if(item.length>0){item.fadeIn(100,function(){nextItem($(this).parents('dl,dt').next().find('img'))})}if(($('img').index(item)-3)==13){$('.gallery').fancyGallery('showMore')}}$('#content p').remove(); $("html, body").animate({ scrollTop: 10000 }, 0);});
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
