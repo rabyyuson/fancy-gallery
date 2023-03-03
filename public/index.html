@@ -12,11 +12,11 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Fancy Gallery</title>
-    <link href="%PUBLIC_URL%/lib/styles.css" type="text/css" rel="stylesheet" />
-    <script src="%PUBLIC_URL%/lib/js/jquery-1.10.2.min.js"></script>
-    <script src="%PUBLIC_URL%/lib/js/jquery-ui-1.8.21.min.js"></script>
-    <script src="%PUBLIC_URL%/lib/js/fancyGallery.js"></script>
-    <script src="%PUBLIC_URL%/lib/js/utilities.js"></script>
+    <link href="%PUBLIC_URL%/library/styles.css" type="text/css" rel="stylesheet" />
+    <script src="%PUBLIC_URL%/library/js/jquery-1.10.2.min.js"></script>
+    <script src="%PUBLIC_URL%/library/js/jquery-ui-1.8.21.min.js"></script>
+    <script src="%PUBLIC_URL%/library/js/fancyGallery.js"></script>
+    <script src="%PUBLIC_URL%/library/js/utilities.js"></script>
     <script type="text/javascript">
       $(function(){$('.gallery').fancyGallery({'effect':'slide'});$('.gallery .gallery-icon img').each(function(){imgResizer(60,$(this))});$('.gallery .gallery-icon img').eq(0).fadeIn(100,function(){nextItem($(this).parents('dl,dt').next().find('img'))});function nextItem(item){if(item.length>0){item.fadeIn(100,function(){nextItem($(this).parents('dl,dt').next().find('img'))})}if(($('img').index(item)-3)==13){$('.gallery').fancyGallery('showMore')}}$('#content p').remove(); $("html, body").animate({ scrollTop: 10000 }, 0);});
     </script>
